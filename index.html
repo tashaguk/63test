@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор приоритета</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение элементов */
+            gap: 20px; /* Пробел между элементами */
+        }
+        .dropdown-wrapper {
+            display: flex;
+            align-items: center; /* Вертикальное выравнивание элементов внутри */
+            width: 100px; /* Фиксированная ширина для выравнивания dropdowns */
+        }
+        label {
+            margin-right: 10px;
+            width: 30%; /* Ширина метки */
+        }
+        select {
+            flex-grow: 1; /* Занять оставшуюся ширину */
+            padding: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Калькулятор приоритета</h1>
+    <p>Формула: P = (IC * 4) + (FP * 3) + (F * 2)</p>
+
+    <div class="container">
+
+        <div class="dropdown-wrapper">
+            <label for="ic">IC:</label>
+            <select id="ic" onchange="calculatePriority()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="dropdown-wrapper">
+            <label for="fp">FP:</label>
+            <select id="fp" onchange="calculatePriority()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="dropdown-wrapper">
+            <label for="f">F:</label>
+            <select id="f" onchange="calculatePriority()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="result">
+        Результат: <span id="result">0</span>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
